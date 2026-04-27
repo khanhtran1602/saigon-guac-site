@@ -2,7 +2,7 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
 
-  .mw { font-family: 'Inter', sans-serif; background: #f9f5ee; width: 100vw; margin: 0; overflow: hidden; border-radius: 0; }
+  .mw { font-family: 'Inter', sans-serif; background: #f9f5ee; max-width: 800px; width: 100%; height: 100vh; margin: 0 auto; overflow: hidden; border-radius: 0; display: flex; flex-direction: column; }
   .hero { background: #2d5a1b; padding: 32px 40px 24px; position: relative; overflow: hidden; }
   .hero-blob { position: absolute; border-radius: 50%; opacity: 0.12; background: #7dc855; }
   .logo-area { margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
@@ -15,7 +15,7 @@
   .guac-img-wrap { position: absolute; right: 32px; top: 50%; transform: translateY(-50%); width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(125,200,85,0.4); }
   .guac-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
   .guac-img-fallback { width: 100%; height: 100%; background: #3d7a25; display: flex; align-items: center; justify-content: center; font-size: 64px; }
-  .body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; flex: 1; }
   .col { padding: 40px 36px 32px; }
   .col:first-child { border-right: 1px solid #d9cebc; }
   .section-label { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #2d5a1b; margin: 0 0 28px; padding-bottom: 12px; border-bottom: 3px solid #7dc855; display: inline-block; }
