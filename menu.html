@@ -20,7 +20,7 @@
   .col:first-child { border-right: 1px solid #d9cebc; }
   .section-label { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #2d5a1b; margin: 0 0 28px; padding-bottom: 12px; border-bottom: 3px solid #7dc855; display: inline-block; }
   .item { margin-bottom: 32px; }
-  .item-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .item-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 4px; }
   .item-name { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 700; color: #1a2e0f; flex: 1; line-height: 1.3; }
   .item-price { font-family: 'Inter', sans-serif; font-size: 26px; font-weight: 700; color: #2d5a1b; white-space: nowrap; background: #e8f5df; padding: 6px 14px; border-radius: 8px; }
   .item-desc { font-size: 22px; color: #4a4a4a; line-height: 1.5; margin: 0 0 10px; font-weight: 400; }
@@ -32,27 +32,29 @@
     .bottom-note { background: #f0e8c8; text-align: center; padding: 14px; font-size: 18px; color: #4a4a4a; letter-spacing: 0.5px; font-weight: 500; }
   .item-detail { margin-top: 8px; }
   .item-addon {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    column-gap: 12px;
-    row-gap: 8px;
-    align-items: start;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
   }
-  .item-addon .item-name { grid-column: 1; grid-row: 1; }
-  .item-addon .item-price { grid-column: 2; grid-row: 1; justify-self: end; margin-bottom: 0; margin-right: -8px; }
-  .item-addon .item-desc { grid-column: 1; grid-row: 2; margin: 0; }
+  .item-addon-text { flex: 1; min-width: 0; }
+  .item-addon-text .item-name { display: block; margin: 0 0 2px; line-height: 1.25; }
+  .item-addon-text .item-desc { margin: 0; line-height: 1.4; }
+  .item-addon-media {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+    margin-right: -8px;
+  }
+  .item-addon-media .item-price { margin: 0; }
   .addon-img-wrap {
-    grid-column: 2;
-    grid-row: 2;
     width: 108px;
     height: 108px;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid rgba(125, 200, 85, 0.45);
     flex-shrink: 0;
-    justify-self: end;
-    margin-right: -8px;
   }
   .addon-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
@@ -161,35 +163,47 @@
       <span class="section-label">Add-Ons</span>
 
       <div class="item item-addon">
-        <span class="item-name">Chicharrón</span>
-        <span class="item-price">189.000đ</span>
-        <p class="item-desc">
-          ~150g (0.33 lb) Sold by weight
-        </p>
-        <div class="addon-img-wrap">
-          <img src="./assets/images/chicharron.png" alt="Chicharrón (placeholder)" />
+        <div class="item-addon-text">
+          <span class="item-name">Chicharrón</span>
+          <p class="item-desc">
+            ~150g (0.33 lb) Sold by weight
+          </p>
+        </div>
+        <div class="item-addon-media">
+          <span class="item-price">189.000đ</span>
+          <div class="addon-img-wrap">
+            <img src="./assets/images/chicharron.png" alt="Chicharrón (placeholder)" />
+          </div>
         </div>
       </div>
 
       <div class="item item-addon">
-        <span class="item-name">Crispy Pork Belly Chips</span>
-        <span class="item-price">159.000đ</span>
-        <p class="item-desc">
-          ~150g (~0.33 lb) per bag
-        </p>
-        <div class="addon-img-wrap">
-          <img src="./assets/images/belly chips.png" alt="Crispy pork belly chips (placeholder)" />
+        <div class="item-addon-text">
+          <span class="item-name">Crispy Pork Belly Chips</span>
+          <p class="item-desc">
+            ~150g (~0.33 lb) per bag
+          </p>
+        </div>
+        <div class="item-addon-media">
+          <span class="item-price">159.000đ</span>
+          <div class="addon-img-wrap">
+            <img src="./assets/images/belly chips.png" alt="Crispy pork belly chips (placeholder)" />
+          </div>
         </div>
       </div>
 
       <div class="item item-addon">
-        <span class="item-name">Tortilla Chips</span>
-        <span class="item-price">32.000đ</span>
-        <p class="item-desc">
-          80g (~0.18 lb) <br>per bag
-        </p>
-        <div class="addon-img-wrap">
-          <img src="./assets/images/chips.png" alt="Tortilla chips (placeholder)" />
+        <div class="item-addon-text">
+          <span class="item-name">Tortilla Chips</span>
+          <p class="item-desc">
+            80g (~0.18 lb) <br>per bag
+          </p>
+        </div>
+        <div class="item-addon-media">
+          <span class="item-price">32.000đ</span>
+          <div class="addon-img-wrap">
+            <img src="./assets/images/chips.png" alt="Tortilla chips (placeholder)" />
+          </div>
         </div>
       </div>
     </div>
